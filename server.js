@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const clientRoutes = require('./routes/clients');
 const patientRoutes = require('./routes/patients');
 const treatmentRoutes = require('./routes/treatment_records');
+const statusRoutes = require('./routes/status_presents');
 require('dotenv').config();
 
 app.use(cors());
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, './public')));
 app.use('/client', clientRoutes);
 app.use('/patient', patientRoutes);
 app.use('/treatment-record', treatmentRoutes);
+app.use('/status-present', statusRoutes);
 
 app.listen(5000, () => {
 	console.log('Server started on 5000');
